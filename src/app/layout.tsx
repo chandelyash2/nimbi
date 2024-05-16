@@ -1,8 +1,14 @@
+import "@rainbow-me/rainbowkit/styles.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { NextUIProvider } from "@nextui-org/react";
+import { ScrollProvider } from "@/context";
+import { headers } from "next/headers";
+import { cookieToInitialState } from "wagmi";
+import { config } from "@/config";
+import WagmiProviderComp from "@/wgami-provider";
+const inter =  Roboto_Condensed ({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +20,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialState = cookieToInitialState(config, headers().get("cookie"));
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <WagmiProviderComp initialState={initialState}>
+          <NextUIProvider>
+            <ScrollProvider>{children}</ScrollProvider>
+          </NextUIProvider>
+        </WagmiProviderComp>
+      </body>
     </html>
   );
 }
