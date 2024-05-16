@@ -44,8 +44,6 @@ export const Header = () => {
   const { open } = useWeb3Modal();
   const { walletInfo } = useWalletInfo();
   const activeSection = useActiveSection(sectionRefs);
-  console.log(activeSection,"aasda");
-  
 
   return (
     <>
@@ -55,7 +53,10 @@ export const Header = () => {
           {navList.map((nav) => (
             <span
               onClick={() => scrollToSection(nav.url)}
-              className={twMerge("text-sm cursor-pointer",activeSection===nav.url&&"p-1 border-b-2 border-secondary")}
+              className={twMerge(
+                "text-sm cursor-pointer",
+                activeSection === nav.url && "p-1 border-b-2 border-secondary"
+              )}
               key={nav.name}
             >
               {nav.name}
@@ -90,7 +91,7 @@ export const Header = () => {
           )}
         </Button>
       </header>
-      <header className="lg:hidden relative flex justify-between items-center px-6 py-2 border-b border-gray-100 bg-opacity-12 backdrop-blur-sm z-[999]">
+      <header className="lg:hidden relative flex justify-between items-center px-6 py-2 border-b border-gray-100 bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
         <span onClick={() => setMenuActive(true)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +171,10 @@ export const Header = () => {
           <div className="flex flex-col gap-5  items-center">
             {navList.map((nav) => (
               <span
-                onClick={() => scrollToSection(nav.url)}
+                onClick={() => {
+                  setMenuActive(false);
+                  scrollToSection(nav.url);
+                }}
                 className="text-sm cursor-pointer"
                 key={nav.name}
               >
