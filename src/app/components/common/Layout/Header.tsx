@@ -38,13 +38,12 @@ export const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
   const sectionRefs: any = useScroll();
 
-
   const scrollToSection = (section: string) => {
     const target = sectionRefs[section].current;
     if (target) {
       window.scrollTo({
         top: target.offsetTop + 20,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -69,35 +68,34 @@ export const Header = () => {
               {nav.name}
             </span>
           ))}
-             <Button
-          className="bg-secondary w-[143px] py-[6px] py-[8px] text-white rounded font-medium"
-          onClick={() => open()}
-        >
-          {walletInfo?.name ? (
-            <span className="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <path
-                  d="M3.3335 8.00002L6.66683 11.3334L12.6668 4.66669"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Connected
-            </span>
-          ) : (
-            "Connect Wallet"
-          )}
-        </Button>
+          <Button
+            className="bg-secondary w-[143px] py-[6px] py-[8px] text-white rounded font-medium"
+            onClick={() => open()}
+          >
+            {walletInfo?.name ? (
+              <span className="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M3.3335 8.00002L6.66683 11.3334L12.6668 4.66669"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Connected
+              </span>
+            ) : (
+              "Connect Wallet"
+            )}
+          </Button>
         </div>
-     
       </header>
       <header className="lg:hidden relative flex justify-between items-center px-6 py-2 border-b border-gray-100  bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
         <span onClick={() => setMenuActive(true)}>
