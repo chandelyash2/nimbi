@@ -22,11 +22,11 @@ export const Footer = () => {
         <div className="flex flex-col lg:flex-row items-left lg:items-center justify-center gap-10 lg:gap-40 w-full">
           <Image src="/Logo.png" width={100} height={100} alt="logo" />
           <div className="flex flex-col lg:flex-row items-left lg:items-center gap-5 text-xs font-semibold">
-            <span>Terms Of Services</span>
-            <span>Privacy Policy</span>
-            <span>Contact Us</span>
-            <span>Token Sale Agreement</span>
-            <span>Buy Nimbi</span>
+            <span className="cursor-pointer">Terms Of Services</span>
+            <span className="cursor-pointer">Privacy Policy</span>
+            <span className="cursor-pointer"> Contact Us</span>
+            <span className="cursor-pointer">Token Sale Agreement</span>
+            <span className="cursor-pointer">Buy Nimbi</span>
           </div>
           <div className="hidden lg:flex items-center gap-5 ">
             <span className="tetx-sm text-[#A1A7AA] font-medium">
