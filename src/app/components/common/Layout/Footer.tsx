@@ -37,7 +37,7 @@ export const Footer = () => {
         <hr className="lg:w-[75%] w-full" />
       </div>
       <div className="flex flex-col gap-6 items-center justify-center text-left">
-        <div className="flex flex-col lg:flex-row items-left lg:items-center justify-center gap-10 lg:gap-40 w-[75%]">
+        <div className="flex flex-col lg:flex-row items-left lg:items-center justify-center gap-10 lg:gap-40 lg:w-[75%]">
           <Link href="/">
             <Image
               src="/Logo.png"
