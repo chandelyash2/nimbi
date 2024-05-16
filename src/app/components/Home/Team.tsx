@@ -21,7 +21,7 @@ export const Team = () => {
           opportunities for growth and advancement in the blockchain space.
         </p>
 
-        <div className="flex flex-wrap gap-4 items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center">
           <TeamCard />
           <TeamCard />
           <TeamCard />

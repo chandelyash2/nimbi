@@ -49,7 +49,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="hidden relative lg:flex justify-between items-center py-[9px] px-[200px] border-b border-gray-100 bg-opacity-12 backdrop-blur-sm z-[999]">
+      <header className="hidden relative lg:flex justify-between items-center py-[9px] px-[200px] border-b border-gray-100 bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
         <Image src="/Logo.png" width={100} height={100} alt="logo" />
         <div className="flex gap-5 items-center">
           {navList.map((nav) => (
