@@ -11,7 +11,7 @@ export const NimbiToken = () => {
 
   return (
     <div
-      className="flex flex-col gap-4
+      className="flex flex-col gap-4 mt-32 lg:mt-4
     items-center justify-center"
       ref={sectionRefs.works}
     >
