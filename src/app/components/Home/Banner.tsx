@@ -14,7 +14,7 @@ export const Banner = () => {
 
   return (
     <div
-      className="relative h-[892px] "
+      className="relative h-[892px] top-32 lg:top-10"
       ref={sectionRefs.buy}
     >
       <Image src="/Home.png" fill objectFit="cover" alt="Home" />
