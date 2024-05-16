@@ -5,7 +5,7 @@ import React from "react";
 
 export const OpenSource = () => {
   return (
-    <div className="relative flex flex-col lg:flex-row justify-center items-center gap-5">
+    <div className="relative flex flex-col lg:flex-row justify-center items-center gap-5 ">
       <div className="absolute left-0 top-10">
         <img
           src="./Nimbilogo.png"
@@ -13,7 +13,7 @@ export const OpenSource = () => {
           className="w-[300px] h-[737px] relative z-1"
         />
       </div>
-      <div className="relative left-0 flex items-center w-[75%]">
+      <div className="relative left-0 flex flex-col lg:flex-row items-center lg:w-[75%] p-4 md:p-8">
         <Image
           src="/Open.png"
           width={389}
