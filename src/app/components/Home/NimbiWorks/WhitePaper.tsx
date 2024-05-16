@@ -6,7 +6,7 @@ import { Container } from "../../common/Container";
 export const WhitePaper = () => {
   return (
     <Container>
-      <div className="flex flex-col md:flex-row justify-between lg:w-[1205px] gap-12">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12">
         <img
           src="/Nimbi.png"
           width={200}
@@ -14,7 +14,7 @@ export const WhitePaper = () => {
           alt="mission"
           className="w-[265px] h-[265px] md:hidden"
         />
-        <div className="flex flex-col gap-5 capitalize text-left lg:w-[700px]">
+        <div className="flex flex-col gap-5 capitalize text-left lg:w-[52%]">
           <h2 className="font-medium text-4xl">Whitepaper</h2>
           <p className="capitalize">
             Explore the Nimbi whitepaper and get an in-depth breakdown of the

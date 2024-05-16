@@ -12,7 +12,7 @@ export const BuyNimbi = () => {
     <Container>
       <div className="flex flex-col items-center justify-center gap-5 capitalize text-center">
         <h2 className="font-medium text-2xl lg:text-4xl">How to Buy Nimbi Token?</h2>
-        <div className="text-[#EBECED] lg:w-[60%] flex flex-col gap-5">
+        <div className="text-[#EBECED] flex flex-col gap-5 lg:w-[70%] justify-center">
           <p>
             Nimbi token presale is your chance to secure $Nimbi before the token
             launch. You can buy with crypto or bank card, plus you can stake
@@ -24,8 +24,8 @@ export const BuyNimbi = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-6 lg:flex-row">
-          <div className="flex flex-col gap-6  py-5 px-7 rounded border-1 border-[#5C666C] text-left bg-[#2E3A41] relative z-2">
+        <div className="flex flex-col gap-6 lg:flex-row lg:w-[70%] justify-center">
+          <div className="flex flex-col gap-6 py-5 px-7 rounded border-1 border-[#5C666C] text-left bg-[#2E3A41] relative z-2">
             <Image src={Wallet} alt="wallet" />
             <h2 className="text-2xl font-medium">STEP 1: Connect Wallet</h2>
             <p className="text-[#EBECED] lg:w-[348px]">

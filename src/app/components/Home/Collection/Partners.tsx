@@ -13,7 +13,7 @@ export const Partners = () => {
         ref={sectionRefs.supporting}
       >
         <h2 className="text-4xl font-medium">Partnerships</h2>
-        <p className="text-[#EBECED] capitalize w-[70%]">
+        <p className="text-[#EBECED] capitalize lg:w-[40%]">
           Collaboration is at the heart of our mission. We are proud to partner
           with industry leaders, innovators, and like-minded projects to drive
           forward our vision of a decentralized future. Together, we're building

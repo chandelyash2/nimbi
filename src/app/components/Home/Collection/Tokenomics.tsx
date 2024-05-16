@@ -5,7 +5,7 @@ import { Container } from "../../common/Container";
 export const Tokenomics = () => {
   return (
     <Container>
-      <div className="flex flex-col justify-between lg:w-[1205px] gap-12">
+      <div className="flex flex-col  lg:w-[1205px] gap-12">
         <h2 className="text-4xl font-medium">Tokenomics</h2>
         <p className="text-[#EBECED] capitalize lg:w-[60%]">
           every erc-404 nimbi token or supporting kazI erc-20 token from the

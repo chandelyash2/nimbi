@@ -8,12 +8,12 @@ export const Web3 = () => {
     <Container>
       <div className="flex flex-col items-center gap-5  text-center">
         <h2 className="text-4xl font-medium">Web3 Crypto Dust Runner Game</h2>
-        <p className="text-2xl font-medium capitalize lg:w-[65%]">
+        <p className="text-2xl font-medium capitalize lg:w-[40%]">
           Introducing Crypto Dust Runner, the web 3 game that's here to bring
           the heat to those corporate whales invading our precious crypto space!
           🌬️🐺
         </p>
-        <div className="text-[#EBECED] capitalize lg:w-[70%]">
+        <div className="text-[#EBECED] capitalize lg:w-[50%]">
           <p>
             In this epic quest, you'll join forces with Nimbi, the fearless
             white wolf, as he races through a treacherous frozen gulch, fueled

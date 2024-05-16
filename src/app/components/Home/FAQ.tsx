@@ -45,13 +45,12 @@ export const FAQ = () => {
   return (
     <Container>
       <div
-        className="flex flex-col gap-4 text-left"
+        className="flex flex-col items-center gap-4 text-left w-full"
         ref={sectionRefs.faq}
       >
         <h2 className="text-3xl font-medium">Frequently Asked Questions</h2>
         <hr />
-
-        <div>
+        <div className="w-[75%]">
           <Accordion
             itemClasses={{
               title: "text-white",

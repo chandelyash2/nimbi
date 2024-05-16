@@ -12,13 +12,13 @@ export const Discover = () => {
         <span className="text-2xl font-medium">
           Discover Our Exclusive NFT Collection.
         </span>
-        <p className="lg:w-[1000px]">
+        <p className="lg:w-[70%]">
           Explore our curated selection of digital artworks, each a unique
           masterpiece created by talented artists from around the world. From
           stunning visual designs to thought-provoking concepts, our NFTs offer
           a glimpse into the vibrant world of digital art.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center mt-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 items-center justify-center mt-3 w-[80%]">
           <CollectionCard img="/Collection.png" />
           <CollectionCard img="/Collection1.png" />
           <CollectionCard img="/Collection2.png" />

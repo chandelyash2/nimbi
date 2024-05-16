@@ -1,11 +1,29 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Divider } from "@nextui-org/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-
+import Arrow from "../../../../../public/Arrow-Up-Encircled.svg";
+import { useScroll } from "@/context";
 export const Footer = () => {
+  const sectionRefs: any = useScroll();
+
+  const scrollToSection = (section: string) => {
+    const target = sectionRefs[section].current;
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop + 20,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
-    <footer className="flex flex-col gap-10 lg:gap-16 items-center bg-[#2E3A41] border-1 border-[#5C666C] py-12 p-4">
+    <footer className="relative flex flex-col gap-10 lg:gap-16 items-center bg-[#2E3A41] border-1 border-[#5C666C] py-12 p-4">
+      <span
+        className="cursor-pointer absolute top-10 right-44"
+        onClick={() => scrollToSection('buy')}
+      >
+        <Image src={Arrow} alt="Arrow" className="rounded-full" />
+      </span>
       <div className="flex flex-col gap-4 items-center justify-center text-center">
         <Image src="/Logo.png" width={200} height={200} alt="logo" />
         <p className="text-sm text-[#E9EAEA] lg:w-[70%] mt-2">
@@ -16,11 +34,19 @@ export const Footer = () => {
         </p>
       </div>
       <div className="flex flex-col items-center w-full">
-        <hr className="lg:w-[95%] w-full" />
+        <hr className="lg:w-[75%] w-full" />
       </div>
       <div className="flex flex-col gap-6 items-center justify-center text-left">
-        <div className="flex flex-col lg:flex-row items-left lg:items-center justify-center gap-10 lg:gap-40 w-full">
-          <Image src="/Logo.png" width={100} height={100} alt="logo" />
+        <div className="flex flex-col lg:flex-row items-left lg:items-center justify-center gap-10 lg:gap-40 w-[75%]">
+          <Link href="/">
+            <Image
+              src="/Logo.png"
+              width={100}
+              height={100}
+              alt="logo"
+              className="cursor-pointer"
+            />
+          </Link>
           <div className="flex flex-col lg:flex-row items-left lg:items-center gap-5 text-xs font-semibold">
             <span className="cursor-pointer">Terms Of Services</span>
             <span className="cursor-pointer">Privacy Policy</span>
@@ -28,8 +54,8 @@ export const Footer = () => {
             <span className="cursor-pointer">Token Sale Agreement</span>
             <span className="cursor-pointer">Buy Nimbi</span>
           </div>
-          <div className="hidden lg:flex items-center gap-5 ">
-            <span className="tetx-sm text-[#A1A7AA] font-medium">
+          <div className="hidden lg:flex items-center gap-5">
+            <span className="tetx-sm text-[#A1A7AA] font-medium cursor-pointer">
               Follow us
             </span>
             <svg
@@ -38,6 +64,7 @@ export const Footer = () => {
               height="25"
               viewBox="0 0 24 25"
               fill="none"
+              className="cursor-pointer"
             >
               <path
                 d="M14.4976 12.5422C14.4976 13.9102 13.3888 15.0189 12.0209 15.0189C10.6529 15.0189 9.54492 13.9102 9.54492 12.5422C9.54492 11.1742 10.6537 10.0654 12.0209 10.0654C13.388 10.0654 14.4976 11.1742 14.4976 12.5422Z"
@@ -105,6 +132,7 @@ export const Footer = () => {
               height="21"
               viewBox="0 0 21 21"
               fill="none"
+              className="cursor-pointer"
             >
               <path
                 fill-rule="evenodd"
@@ -149,6 +177,7 @@ export const Footer = () => {
               height="25"
               viewBox="0 0 24 25"
               fill="none"
+              className="cursor-pointer"
             >
               <path
                 d="M13.9027 10.9686L21.3482 2.5H19.5838L13.119 9.8532L7.95547 2.5H2L9.8082 13.6193L2 22.5H3.76443L10.5915 14.7348L16.0445 22.5H22L13.9023 10.9686H13.9027ZM11.4861 13.7173L10.695 12.6101L4.40018 3.79968H7.11025L12.1902 10.9099L12.9813 12.0172L19.5847 21.2594H16.8746L11.4861 13.7177V13.7173Z"
@@ -161,6 +190,7 @@ export const Footer = () => {
               height="21"
               viewBox="0 0 20 21"
               fill="none"
+              className="cursor-pointer"
             >
               <g clip-path="url(#clip0_3134_1444)">
                 <path
@@ -185,6 +215,7 @@ export const Footer = () => {
               height="25"
               viewBox="0 0 24 25"
               fill="none"
+              className="cursor-pointer"
             >
               <path
                 d="M20.5217 2.54004H3.47788C2.66183 2.54004 2 3.17923 2 3.96721V21.0333C2 21.8213 2.66183 22.4597 3.47788 22.4597H20.5217C21.3386 22.4597 21.9996 21.8205 21.9996 21.0333V3.96721C21.9996 3.17923 21.3378 2.54004 20.5217 2.54004ZM8.07779 19.2101H5.08508V10.2423H8.07779V19.2101ZM6.58224 9.01831H6.56296C5.55816 9.01831 4.90918 8.32953 4.90918 7.46874C4.90918 6.58876 5.57824 5.91917 6.60232 5.91917C7.62559 5.91917 8.2561 6.58876 8.27538 7.46874C8.27538 8.32953 7.62559 9.01831 6.58224 9.01831ZM18.8696 19.2101H15.8768V14.4134C15.8768 13.2078 15.4439 12.3854 14.3612 12.3854C13.5339 12.3854 13.0416 12.9398 12.8255 13.4758C12.7468 13.667 12.7267 13.9358 12.7267 14.203V19.2109H9.73399C9.73399 19.2109 9.77334 11.0847 9.73399 10.2431H12.7267V11.5127C13.1243 10.9015 13.8367 10.0327 15.4238 10.0327C17.3925 10.0327 18.8687 11.3143 18.8687 14.0686V19.2101H18.8696Z"
@@ -197,6 +228,7 @@ export const Footer = () => {
               height="25"
               viewBox="0 0 24 25"
               fill="none"
+              className="cursor-pointer"
             >
               <path
                 d="M19.2002 3.7002H4.8002C3.9162 3.7002 3.2002 4.4162 3.2002 5.3002V19.7002C3.2002 20.5842 3.9162 21.3002 4.8002 21.3002H19.2002C20.0842 21.3002 20.8002 20.5842 20.8002 19.7002V5.3002C20.8002 4.4162 20.0834 3.7002 19.2002 3.7002ZM18.1514 11.2794C18.0474 11.289 17.9426 11.2954 17.837 11.2954C16.641 11.2954 15.5898 10.681 14.9778 9.7506C14.9778 12.1898 14.9778 14.9658 14.9778 15.0122C14.9778 17.1602 13.2362 18.901 11.089 18.901C8.9418 18.9002 7.2002 17.1586 7.2002 15.0114C7.2002 12.8634 8.9418 11.1226 11.089 11.1226C11.1706 11.1226 11.2498 11.1298 11.329 11.1346V13.0514C11.249 13.0418 11.1714 13.0274 11.089 13.0274C9.993 13.0274 9.1042 13.9162 9.1042 15.0122C9.1042 16.1082 9.9922 16.997 11.089 16.997C12.1858 16.997 13.1538 16.133 13.1538 15.037C13.1538 14.993 13.173 6.101 13.173 6.101H15.0042C15.1762 7.7386 16.4986 9.0314 18.1514 9.1498V11.2794Z"
@@ -205,7 +237,7 @@ export const Footer = () => {
             </svg>
           </div>
         </div>
-        <p className="lg:w-[95%] text-[#EBECED]">
+        <p className="lg:w-[75%] text-[#EBECED]">
           NIMBI .com platform (“Platform”) is offered for your engagement. By
           interacting with the Platform, you consent to abide by our Terms of
           Service, Privacy Policy, Cookie Policy, and Token purchase terms.
@@ -224,13 +256,16 @@ export const Footer = () => {
           partial or complete loss of funds.
         </p>
         <div className="lg:hidden flex items-center gap-5">
-          <span className="tetx-sm text-[#A1A7AA] font-medium">Follow us</span>
+          <span className="tetx-sm text-[#A1A7AA] font-medium cursor-pointer">
+            Follow us
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="25"
             viewBox="0 0 24 25"
             fill="none"
+            className="cursor-pointer"
           >
             <path
               d="M14.4976 12.5422C14.4976 13.9102 13.3888 15.0189 12.0209 15.0189C10.6529 15.0189 9.54492 13.9102 9.54492 12.5422C9.54492 11.1742 10.6537 10.0654 12.0209 10.0654C13.388 10.0654 14.4976 11.1742 14.4976 12.5422Z"
@@ -298,6 +333,7 @@ export const Footer = () => {
             height="21"
             viewBox="0 0 21 21"
             fill="none"
+            className="cursor-pointer"
           >
             <path
               fill-rule="evenodd"
@@ -342,6 +378,7 @@ export const Footer = () => {
             height="25"
             viewBox="0 0 24 25"
             fill="none"
+            className="cursor-pointer"
           >
             <path
               d="M13.9027 10.9686L21.3482 2.5H19.5838L13.119 9.8532L7.95547 2.5H2L9.8082 13.6193L2 22.5H3.76443L10.5915 14.7348L16.0445 22.5H22L13.9023 10.9686H13.9027ZM11.4861 13.7173L10.695 12.6101L4.40018 3.79968H7.11025L12.1902 10.9099L12.9813 12.0172L19.5847 21.2594H16.8746L11.4861 13.7177V13.7173Z"
@@ -378,6 +415,7 @@ export const Footer = () => {
             height="25"
             viewBox="0 0 24 25"
             fill="none"
+            className="cursor-pointer"
           >
             <path
               d="M20.5217 2.54004H3.47788C2.66183 2.54004 2 3.17923 2 3.96721V21.0333C2 21.8213 2.66183 22.4597 3.47788 22.4597H20.5217C21.3386 22.4597 21.9996 21.8205 21.9996 21.0333V3.96721C21.9996 3.17923 21.3378 2.54004 20.5217 2.54004ZM8.07779 19.2101H5.08508V10.2423H8.07779V19.2101ZM6.58224 9.01831H6.56296C5.55816 9.01831 4.90918 8.32953 4.90918 7.46874C4.90918 6.58876 5.57824 5.91917 6.60232 5.91917C7.62559 5.91917 8.2561 6.58876 8.27538 7.46874C8.27538 8.32953 7.62559 9.01831 6.58224 9.01831ZM18.8696 19.2101H15.8768V14.4134C15.8768 13.2078 15.4439 12.3854 14.3612 12.3854C13.5339 12.3854 13.0416 12.9398 12.8255 13.4758C12.7468 13.667 12.7267 13.9358 12.7267 14.203V19.2109H9.73399C9.73399 19.2109 9.77334 11.0847 9.73399 10.2431H12.7267V11.5127C13.1243 10.9015 13.8367 10.0327 15.4238 10.0327C17.3925 10.0327 18.8687 11.3143 18.8687 14.0686V19.2101H18.8696Z"

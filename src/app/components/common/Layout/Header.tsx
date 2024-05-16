@@ -38,8 +38,15 @@ export const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
   const sectionRefs: any = useScroll();
 
+
   const scrollToSection = (section: string) => {
-    sectionRefs[section].current?.scrollIntoView({ behavior: "smooth" });
+    const target = sectionRefs[section].current;
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop + 20,
+        behavior: 'smooth',
+      });
+    }
   };
   const { open } = useWeb3Modal();
   const { walletInfo } = useWalletInfo();
@@ -47,14 +54,14 @@ export const Header = () => {
 
   return (
     <>
-      <header className="hidden relative lg:flex justify-between items-center py-[9px] px-[200px] border-b border-gray-100 bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
+      <header className="hidden relative lg:flex justify-around items-center py-4 px-[200px] border-b border-gray-100 bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
         <Image src="/Logo.png" width={100} height={100} alt="logo" />
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-8 items-center">
           {navList.map((nav) => (
             <span
               onClick={() => scrollToSection(nav.url)}
               className={twMerge(
-                "text-sm cursor-pointer",
+                "font-medium text-sm cursor-pointer",
                 activeSection === nav.url && "p-1 border-b-2 border-secondary"
               )}
               key={nav.name}
@@ -62,8 +69,7 @@ export const Header = () => {
               {nav.name}
             </span>
           ))}
-        </div>
-        <Button
+             <Button
           className="bg-secondary w-[143px] py-[6px] py-[8px] text-white rounded font-medium"
           onClick={() => open()}
         >
@@ -90,8 +96,10 @@ export const Header = () => {
             "Connect Wallet"
           )}
         </Button>
+        </div>
+     
       </header>
-      <header className="lg:hidden relative flex justify-between items-center px-6 py-2 border-b border-gray-100 bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
+      <header className="lg:hidden relative flex justify-between items-center px-6 py-2 border-b border-gray-100  bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
         <span onClick={() => setMenuActive(true)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +180,7 @@ export const Header = () => {
             {navList.map((nav) => (
               <span
                 onClick={() => {
-                  setMenuActive(false);
+                  setMenuActive(true);
                   scrollToSection(nav.url);
                 }}
                 className="text-sm cursor-pointer"
