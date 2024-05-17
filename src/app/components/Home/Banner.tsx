@@ -19,12 +19,12 @@ export const Banner = () => {
     >
       <Image src="/Home.png" fill objectFit="cover" alt="Home" />
       <div className="relative top-16 lg:top-40 flex flex-col lg:flex-row justify-center items-center gap-[30px] lg:gap-[138px] p-4">
-        <div className="flex flex-col gap-7 lg:w-[800px]">
+        <div className="flex flex-col gap-7 lg:w-[800px] items-center">
           <h2 className="capitalize text-4xl md:text-6xl lg:text-7xl text-center font-medium">
             unite humanity with just your{" "}
             <span className="text-[#00E0FF]">Crypto Dust</span>
           </h2>
-          <p className="capitalize md:text-xl font-medium text-left lg:pl-14">
+          <p className="capitalize md:text-xlfont-medium text-left lg:pl-14 w-[90%]">
             join Nimbi's wolfpack and make change together and have fun along
             the way. we need to start the clock on top for presale.
           </p>

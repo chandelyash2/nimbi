@@ -132,34 +132,39 @@ export const Header = () => {
           scrollPosition > 30 && "bg-white bg-opacity-100 text-black"
         )}
       >
-        <span onClick={() => setMenuActive(true)}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
+        <div className="flex items-center gap-4">
+          <span onClick={() => setMenuActive(true)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M16.7083 9.16667H3.29167C2.85444 9.16667 2.5 9.52111 2.5 9.95833V10.0417C2.5 10.4789 2.85444 10.8333 3.29167 10.8333H16.7083C17.1456 10.8333 17.5 10.4789 17.5 10.0417V9.95833C17.5 9.52111 17.1456 9.16667 16.7083 9.16667Z"
+                fill={scrollPosition > 30 ? "#000000" : "#ffff"}
+              />
+              <path
+                d="M16.7083 13.3333H3.29167C2.85444 13.3333 2.5 13.6878 2.5 14.125V14.2083C2.5 14.6456 2.85444 15 3.29167 15H16.7083C17.1456 15 17.5 14.6456 17.5 14.2083V14.125C17.5 13.6878 17.1456 13.3333 16.7083 13.3333Z"
+                fill={scrollPosition > 30 ? "#000000" : "#ffff"}
+              />
+              <path
+                d="M16.7083 5H3.29167C2.85444 5 2.5 5.35444 2.5 5.79167V5.875C2.5 6.31223 2.85444 6.66667 3.29167 6.66667H16.7083C17.1456 6.66667 17.5 6.31223 17.5 5.875V5.79167C17.5 5.35444 17.1456 5 16.7083 5Z"
+                fill={scrollPosition > 30 ? "#000000" : "#ffff"}
+              />
+            </svg>
+          </span>
+          <div
+            className="cursor-pointer"
+            onClick={() => scrollToSection("buy")}
           >
-            <path
-              d="M16.7083 9.16667H3.29167C2.85444 9.16667 2.5 9.52111 2.5 9.95833V10.0417C2.5 10.4789 2.85444 10.8333 3.29167 10.8333H16.7083C17.1456 10.8333 17.5 10.4789 17.5 10.0417V9.95833C17.5 9.52111 17.1456 9.16667 16.7083 9.16667Z"
-              fill={scrollPosition > 30 ? "#000000" : "#ffff"}
-            />
-            <path
-              d="M16.7083 13.3333H3.29167C2.85444 13.3333 2.5 13.6878 2.5 14.125V14.2083C2.5 14.6456 2.85444 15 3.29167 15H16.7083C17.1456 15 17.5 14.6456 17.5 14.2083V14.125C17.5 13.6878 17.1456 13.3333 16.7083 13.3333Z"
-              fill={scrollPosition > 30 ? "#000000" : "#ffff"}
-            />
-            <path
-              d="M16.7083 5H3.29167C2.85444 5 2.5 5.35444 2.5 5.79167V5.875C2.5 6.31223 2.85444 6.66667 3.29167 6.66667H16.7083C17.1456 6.66667 17.5 6.31223 17.5 5.875V5.79167C17.5 5.35444 17.1456 5 16.7083 5Z"
-              fill={scrollPosition > 30 ? "#000000" : "#ffff"}
-            />
-          </svg>
-        </span>
-        <div className="cursor-pointer" onClick={() => scrollToSection("buy")}>
-          {scrollPosition > 30 ? (
-            <Image src="/Logowhite.png" width={100} height={100} alt="logo" />
-          ) : (
-            <Image src="/Logo.png" width={100} height={100} alt="logo" />
-          )}
+            {scrollPosition > 30 ? (
+              <Image src="/Logowhite.png" width={100} height={100} alt="logo" />
+            ) : (
+              <Image src="/Logo.png" width={100} height={100} alt="logo" />
+            )}
+          </div>
         </div>
         <Button
           className="bg-secondary max-w-[143px] py-[6px] py-[8px] text-white rounded font-medium"
@@ -188,10 +193,9 @@ export const Header = () => {
             "Connect Wallet"
           )}
         </Button>
-        {/* <ConnectButton /> */}
       </header>
       {menuActive && (
-        <div className="fixed top-0 w-full h-full bg-[#242D32] flex flex-col gap-20 z-[999] items-center justify-center">
+        <div className="fixed top-0 w-full md:w-[50%] h-full bg-[#242D32] flex flex-col gap-20 z-[999] items-center justify-center">
           <span
             className="absolute top-4 right-4"
             onClick={() => setMenuActive(false)}
@@ -218,7 +222,7 @@ export const Header = () => {
             {navList.map((nav) => (
               <span
                 onClick={() => {
-                  setMenuActive(true);
+                  setMenuActive(false);
                   scrollToSection(nav.url);
                 }}
                 className="text-sm cursor-pointer"
