@@ -5,9 +5,10 @@ import Image from "next/image";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { useWalletInfo } from "@web3modal/wagmi/react";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useActiveSection from "@/useActiveSection";
 import { twMerge } from "tailwind-merge";
+import { Roboto_Condensed } from "next/font/google";
 const navList = [
   {
     name: "Buy",
@@ -34,9 +35,24 @@ const navList = [
     url: "faq",
   },
 ];
+const roboto_conde = Roboto_Condensed({ subsets: ["latin"] });
+
 export const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
   const sectionRefs: any = useScroll();
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const scrollToSection = (section: string) => {
     const target = sectionRefs[section].current;
@@ -53,8 +69,20 @@ export const Header = () => {
 
   return (
     <>
-      <header className="hidden relative lg:flex justify-around items-center py-4 px-[200px] border-b border-gray-100 bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
-        <Image src="/Logo.png" width={100} height={100} alt="logo" />
+      <header
+        className={twMerge(
+          roboto_conde.className,
+          "hidden relative lg:flex justify-around items-center py-4 px-[200px] border-b border-gray-100 bg-black bg-opacity-40 backdrop-blur-sm z-[999]",
+          scrollPosition > 30 && "bg-white bg-opacity-100 text-black"
+        )}
+      >
+        <div className="cursor-pointer" onClick={() => scrollToSection("buy")}>
+          {scrollPosition > 30 ? (
+            <Image src="/Logowhite.png" width={100} height={100} alt="logo" />
+          ) : (
+            <Image src="/Logo.png" width={100} height={100} alt="logo" />
+          )}
+        </div>
         <div className="flex gap-8 items-center">
           {navList.map((nav) => (
             <span
@@ -97,7 +125,13 @@ export const Header = () => {
           </Button>
         </div>
       </header>
-      <header className="lg:hidden relative flex justify-between items-center px-6 py-2 border-b border-gray-100  bg-black bg-opacity-40 backdrop-blur-sm z-[999]">
+      <header
+        className={twMerge(
+          roboto_conde.className,
+          "lg:hidden relative flex justify-between items-center px-6 py-2 border-b border-gray-100 bg-black bg-opacity-40 backdrop-blur-sm z-[999]",
+          scrollPosition > 30 && "bg-white bg-opacity-100 text-black"
+        )}
+      >
         <span onClick={() => setMenuActive(true)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -108,19 +142,25 @@ export const Header = () => {
           >
             <path
               d="M16.7083 9.16667H3.29167C2.85444 9.16667 2.5 9.52111 2.5 9.95833V10.0417C2.5 10.4789 2.85444 10.8333 3.29167 10.8333H16.7083C17.1456 10.8333 17.5 10.4789 17.5 10.0417V9.95833C17.5 9.52111 17.1456 9.16667 16.7083 9.16667Z"
-              fill="#ffff"
+              fill={scrollPosition > 30 ? "#000000" : "#ffff"}
             />
             <path
               d="M16.7083 13.3333H3.29167C2.85444 13.3333 2.5 13.6878 2.5 14.125V14.2083C2.5 14.6456 2.85444 15 3.29167 15H16.7083C17.1456 15 17.5 14.6456 17.5 14.2083V14.125C17.5 13.6878 17.1456 13.3333 16.7083 13.3333Z"
-              fill="#ffff"
+              fill={scrollPosition > 30 ? "#000000" : "#ffff"}
             />
             <path
               d="M16.7083 5H3.29167C2.85444 5 2.5 5.35444 2.5 5.79167V5.875C2.5 6.31223 2.85444 6.66667 3.29167 6.66667H16.7083C17.1456 6.66667 17.5 6.31223 17.5 5.875V5.79167C17.5 5.35444 17.1456 5 16.7083 5Z"
-              fill="#ffff"
+              fill={scrollPosition > 30 ? "#000000" : "#ffff"}
             />
           </svg>
         </span>
-        <Image src="/Logo.png" width={100} height={100} alt="logo" />
+        <div className="cursor-pointer" onClick={() => scrollToSection("buy")}>
+          {scrollPosition > 30 ? (
+            <Image src="/Logowhite.png" width={100} height={100} alt="logo" />
+          ) : (
+            <Image src="/Logo.png" width={100} height={100} alt="logo" />
+          )}
+        </div>
         <Button
           className="bg-secondary max-w-[143px] py-[6px] py-[8px] text-white rounded font-medium"
           onClick={() => open()}

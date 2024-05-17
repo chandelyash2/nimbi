@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 const {nextui} = require("@nextui-org/react");
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 const config: Config = {
   content: [

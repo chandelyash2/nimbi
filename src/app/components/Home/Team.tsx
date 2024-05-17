@@ -13,7 +13,7 @@ export const Team = () => {
       <div className="flex flex-col gap-5 items-center" ref={sectionRefs.team}>
         <h2 className="text-4xl font-medium text-center w-full">Team</h2>
         <div className="flex justify-center">
-          <p className="lg:w-[70%] capitalize text-center">
+          <p className="lg:w-[45%] capitalize text-center">
             Decentralized Collaboration is at the heart of our mission. We are
             proud to partner with industry leaders, innovators, and like-minded
             projects to drive forward our vision of a decentralized future.
@@ -22,7 +22,7 @@ export const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:w-[74%] gap-4">
           <TeamCard />
           <TeamCard />
           <TeamCard />

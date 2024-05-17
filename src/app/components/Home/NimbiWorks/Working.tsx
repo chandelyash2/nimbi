@@ -5,7 +5,7 @@ import { Container } from "../../common/Container";
 export const Working = () => {
   return (
     <Container>
-      <div className="flex flex-col items-center justify-center gap-5 capitalize text-center">
+      <div className="flex flex-col items-center justify-center gap-5 capitalize text-center backdrop-blur-sm">
         <h2 className="font-medium text-4xl">How It Works</h2>
         <div className="hidden lg:flex justify-center lg:w-[70%]">
           <img src="/Group.png" alt="group" className="w-full" />

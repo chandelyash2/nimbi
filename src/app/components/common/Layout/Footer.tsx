@@ -19,7 +19,7 @@ export const Footer = () => {
   return (
     <footer className="relative flex flex-col gap-10 lg:gap-16 items-center bg-[#2E3A41] border-1 border-[#5C666C] py-12 p-4">
       <span
-        className="cursor-pointer absolute top-10 right-44"
+        className="cursor-pointer absolute top-10 right-4 lg:right-44"
         onClick={() => scrollToSection('buy')}
       >
         <Image src={Arrow} alt="Arrow" className="rounded-full" />

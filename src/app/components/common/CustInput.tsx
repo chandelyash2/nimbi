@@ -7,7 +7,7 @@ interface CustInputProp {
 export const CustInput = ({ label, placeholder, type }:CustInputProp) => {
   return (
     <div className="text-black flex flex-col gap-2 min-w-[70%] text-left">
-      <label>{label}</label>
+      <label className="text-white">{label}</label>
       <input
         type={type}
         placeholder={placeholder}

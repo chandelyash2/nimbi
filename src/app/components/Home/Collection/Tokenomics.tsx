@@ -5,7 +5,7 @@ import { Container } from "../../common/Container";
 export const Tokenomics = () => {
   return (
     <Container>
-      <div className="flex flex-col  lg:w-[1205px] gap-12">
+      <div className="flex flex-col lg:w-[1205px] gap-6 lg:gap-12">
         <h2 className="text-4xl font-medium">Tokenomics</h2>
         <p className="text-[#EBECED] capitalize lg:w-[60%]">
           every erc-404 nimbi token or supporting kazI erc-20 token from the
@@ -19,7 +19,12 @@ export const Tokenomics = () => {
         <img
           src="/Token.png"
           alt="token"
-          className="mt-6 lg:mt-16 lg:w-[1204px]"
+          className="hidden lg:flex mt-16 w-[1204px]"
+        />
+           <img
+          src="/Mobile.png"
+          alt="token"
+          className="w-full lg:hidden"
         />
       </div>
     </Container>

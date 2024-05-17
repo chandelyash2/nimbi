@@ -56,7 +56,7 @@ export const Banner = () => {
           </span>
 
           <div className="font-medium flex justify-between items-center">
-            <Button className="flex items-center bg-transparent border rounded w-[160px] ">
+            <Button className="flex items-center bg-transparent border rounded w-[160px] text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="19"
@@ -99,7 +99,7 @@ export const Banner = () => {
               </svg>
               <span>ETH</span>
             </Button>
-            <Button className="flex items-center bg-transparent border rounded w-[160px] ">
+            <Button className="flex items-center bg-transparent border rounded w-[160px] text-white">
               <Image src={Crypto} alt="Crypto" />
               <span>USDT</span>
             </Button>

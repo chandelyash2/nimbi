@@ -20,7 +20,7 @@ export const CollectionCard = ({img}:CollectionCardProp) => {
         width={200}
       />
       <CardHeader className="flex justify-center absolute top-4 left-2 shadow-small p-1 rounded-full w-[70px] bg-black bg-opacity-50">
-        <h2 className="text-xs">@Author</h2>
+        <h2 className="text-xs text-white">@Author</h2>
       </CardHeader>
       <CardFooter className="py-1 absolute bottom-0 w-full shadow-small z-10 h-[64px] bg-white bg-opacity-50 flex justify-between items-center">
         <div className="text-left">

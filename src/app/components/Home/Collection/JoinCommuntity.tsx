@@ -12,7 +12,7 @@ export const JoinCommuntity = () => {
         alt="joincommunity"
         className="hidden md:flex w-full md:h-[712px]"
       />
-      <img src="/Join1.png" alt="joincommunity" className="w-full h-[1100px] md:hidden" />
+      <img src="/Join1.png" alt="joincommunity" className="w-full h-[1150px] md:hidden" />
 
       <div className="flex flex-col gap-6 absolute top-4 lg:right-6 lg:w-[55%] lg:text-left text-center p-2 md:items-center lg:items-start">
         <h2 className="text-5xl font-bold"> Join Our Community Airdrops!</h2>

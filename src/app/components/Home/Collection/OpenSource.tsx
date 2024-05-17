@@ -10,10 +10,10 @@ export const OpenSource = () => {
         <img
           src="./Nimbilogo.png"
           alt="eth"
-          className="w-[300px] h-[737px] relative z-1"
+          className="w-[400px] h-[737px] relative z-1"
         />
       </div>
-      <div className="relative left-0 flex flex-col lg:flex-row items-center lg:w-[75%] p-4 md:p-8">
+      <div className="relative left-0 flex flex-col lg:flex-row items-center lg:w-[68%] p-4 md:p-8">
         <Image
           src="/Open.png"
           width={389}
