@@ -10,7 +10,7 @@ export const AboutNimbi = () => {
           Come join the Nimbi Vip Loyalty program and help unite the nimbi
           wolfpack team.
         </p>
-        <p className="text-[#EBECED] lg:w-[65%]">
+        <p className="text-[#EBECED] lg:w-[67%]">
           Nimbi token is a groundbreaking decentralized eco-system merging unity
           and blockchain technology together as d-power. Operating on the
           erc-404 token protocol, early adopters to the nimbi community will
