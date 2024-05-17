@@ -3,8 +3,11 @@
 import { Button, Input } from "@nextui-org/react";
 import React from "react";
 import { CustInput } from "../../common/CustInput";
+import { useScroll } from "@/context";
 
 export const JoinCommuntity = () => {
+  const sectionRefs: any = useScroll();
+
   return (
     <div className="relative text-center">
       <img
@@ -12,7 +15,11 @@ export const JoinCommuntity = () => {
         alt="joincommunity"
         className="hidden md:flex w-full md:h-[712px]"
       />
-      <img src="/Join1.png" alt="joincommunity" className="w-full h-[1150px] md:hidden" />
+      <img
+        src="/Join1.png"
+        alt="joincommunity"
+        className="w-full h-[1150px] md:hidden"
+      />
 
       <div className="flex flex-col gap-6 absolute top-4 lg:right-6 lg:w-[55%] lg:text-left text-center p-2 md:items-center lg:items-start">
         <h2 className="text-5xl font-bold"> Join Our Community Airdrops!</h2>
@@ -49,7 +56,7 @@ export const JoinCommuntity = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col md:flex-row gap-4" >
+        <div className="flex flex-col md:flex-row gap-4">
           <CustInput type="email" label="Email Address" placeholder="Email" />
           <Button className="rounded md:mt-8 md:w-[220px]" color="secondary">
             Sign up

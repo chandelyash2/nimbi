@@ -24,7 +24,7 @@ export const Banner = () => {
             unite humanity with just your{" "}
             <span className="text-[#00E0FF]">Crypto Dust</span>
           </h2>
-          <p className="capitalize md:text-xl font-medium text-center">
+          <p className="capitalize md:text-xl font-medium text-left lg:pl-14">
             join Nimbi's wolfpack and make change together and have fun along
             the way. we need to start the clock on top for presale.
           </p>

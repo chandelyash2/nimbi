@@ -13,7 +13,7 @@ const useActiveSection = (sectionRefs: { [key: string]: React.RefObject<HTMLElem
         const element = sectionRefs[section].current;
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 0 && rect.bottom >= 0) {
+          if (rect.top <= 200 && rect.bottom >= 200) {
             currentSection = section;
           }
         }

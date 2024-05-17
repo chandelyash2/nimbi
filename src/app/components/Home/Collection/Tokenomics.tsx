@@ -21,11 +21,8 @@ export const Tokenomics = () => {
           alt="token"
           className="hidden lg:flex mt-16 w-[1204px]"
         />
-           <img
-          src="/Mobile.png"
-          alt="token"
-          className="w-full lg:hidden"
-        />
+        <img src="/Mobile.png" alt="token" className="w-full lg:hidden" />
+        <img src="/Mobile.png" alt="token" className="hidden md:w-full lg:hidden" />
       </div>
     </Container>
   );

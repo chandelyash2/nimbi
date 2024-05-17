@@ -58,7 +58,7 @@ export const Header = () => {
     const target = sectionRefs[section].current;
     if (target) {
       window.scrollTo({
-        top: target.offsetTop + 20,
+        top: target.offsetTop - 200,
         behavior: "smooth",
       });
     }

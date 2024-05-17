@@ -5,6 +5,64 @@ import { Container } from "../common/Container";
 import { TeamCard } from "../common/TeamCard";
 import { useScroll } from "@/context";
 
+const teamArr = [
+  {
+    img: "/Team1.jpeg",
+    role: "CEO and Founder",
+    name: "Nimbi Token",
+    description:
+      "Building the Nimbi community day in, day out. Shaping NIMBI’s vision into reality a step at a time. Visionary behind the project ",
+  },
+  {
+    img: "/Team2.png",
+    role: "TECHNICAL OFFICER",
+    name: "Nimbi Token",
+    description:
+      "Building the Nimbi community day in, day out. Shaping NIMBI’s vision into reality a step at a time. Visionary behind the project ",
+  },
+  {
+    img: "/Team3.png",
+    role: "SMART CONTRACT DEV",
+    name: "Nimbi Token",
+    description:
+      "Building the Nimbi community day in, day out. Shaping NIMBI’s vision into reality a step at a time. Visionary behind the project ",
+  },
+  {
+    img: "/Team4.png",
+    role: "MARKETING",
+    name: "Nimbi Token",
+    description:
+      "Building the Nimbi community day in, day out. Shaping NIMBI’s vision into reality a step at a time. Visionary behind the project ",
+  },
+  {
+    img: "/Team5.png",
+    role: "BACKEND DEV",
+    name: "Nimbi Token",
+    description:
+      "Building the Nimbi community day in, day out. Shaping NIMBI’s vision into reality a step at a time. Visionary behind the project ",
+  },
+  {
+    img: "/Team6.png",
+    role: "UI/UX",
+    name: "Nimbi Token",
+    description:
+      "Building the Nimbi community day in, day out. Shaping NIMBI’s vision into reality a step at a time. Visionary behind the project ",
+  },
+  {
+    img: "/Team7.png",
+    role: "FRONT END DEV",
+    name: "Nimbi Token",
+    description:
+      "Building the Nimbi community day in, day out. Shaping NIMBI’s vision into reality a step at a time. Visionary behind the project ",
+  },
+  {
+    img: "/Team8.png",
+    role: "COMMUNITY MODERATION",
+    name: "Nimbi Token",
+    description:
+      "Building the Nimbi community day in, day out. Shaping NIMBI’s vision into reality a step at a time. Visionary behind the project ",
+  },
+];
 export const Team = () => {
   const sectionRefs: any = useScroll();
 
@@ -23,14 +81,9 @@ export const Team = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:w-[74%] gap-4">
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
+          {teamArr.map((item, i) => (
+            <TeamCard data={item} key={i} />
+          ))}
         </div>
       </div>
     </Container>

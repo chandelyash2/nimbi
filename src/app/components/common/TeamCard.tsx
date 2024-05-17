@@ -2,7 +2,16 @@ import { Card, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import React from "react";
 
-export const TeamCard = () => {
+type CardData = {
+  img: string;
+  role: string;
+  name: string;
+  description: string;
+};
+interface TeamCardProp {
+  data: CardData;
+}
+export const TeamCard = ({ data }: TeamCardProp) => {
   return (
     <Card
       radius="lg"
@@ -11,18 +20,17 @@ export const TeamCard = () => {
       <Image
         alt="Woman listing to music"
         className="w-full rounded object-cover"
-        src="/Team1.jpeg"
+        src={data.img}
         width={200}
         height={200}
       />
 
       <CardBody className="flex flex-col gap-2">
-        <h2 className="text-secondary font-bold">CEO and Founder</h2>
-        <h1 className="text-white text-2xl font-bold border-b w-auto">Nimbi Token</h1>
-        <p className="text-[#EBECED] text-sm">
-          Building the Nimbi community day in, day out. Shaping NIMBI’s vision
-          into reality a step at a time. Visionary behind the project
-        </p>
+        <h2 className="text-secondary font-bold">{data.role}</h2>
+        <h1 className="text-white text-2xl font-bold border-b w-auto">
+          {data.name}
+        </h1>
+        <p className="text-[#EBECED] text-sm">{data.description}</p>
       </CardBody>
     </Card>
   );
